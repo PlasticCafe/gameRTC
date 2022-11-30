@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang='en' style='overflow: hidden;' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+  <title>Gamertc</title>
+  <link rel="stylesheet" type="text/css" media="all" href="gamestyle.css" />
+  <script type='text/javascript' src='jquery-2.1.1.min.js'></script>
+  <script type='text/javascript' src='firebase-simple-login.js'>
+</script>
+  <script type='text/javascript' src='firebase.js'>
+</script>
+  <script src="rtcstreaming.js">
+</script>
+</head>
+
+<body>
+  <div id="splash">
+    <h1 class="title-splash">GameRTC</h1>
+    <input type="text" placeholder="Enter a nickname" class="input-splash inick" onkeypress="connect_enter(event,this)"/><br/>
+    <input type="text" placeholder="Choose a channel" class="input-splash ichan" onkeypress="connect_enter(event,this)"/><br/>
+    <input type="submit" value="Connect" class="button-splash" onclick="connect(this)"/>
+  </div>
+  <div id="mainapp">
+    <div id="leftcol" class="colhide">
+      <h1 class="title">GameRTC</h1>
+      <div class="nick">
+        <div class="texborder"><b>Nickname:</b></div>
+        <input class="input" id="nickinput" class="nickbox" maxlength="30"/>    
+        </section>
+      </div>
+      <div class="texborder"><b>Current Channel:</b></div>
+      <input class="input" type="text" id="channel-key" onkeypress="changeChannel(event,this)"/>
+
+      <div class="divider"></div><br />
+      <input class="input-session" type="text" placeholder="Session Name" id="session-name" /><input class="button-session" id="create-session" value="Create Session" onclick="newRoom()"/><br />
+      <b>Active Sessions:</b>
+
+      <table id="session-list"></table>
+    </div>
+
+    <div id="maincol">
+      <div id="mainvideo">
+      <video id="video" autoplay></video>
+      </div>
+      <ul id="videolist" class="hidelist">
+            <div id="empty">
+                <h2 style="font-size: 85px">                    
+                    No Streams Joined
+                </h2>
+            </div>         
+
+      </ul>
+    
+    <div id="roomcol">
+        <div id="userlist">
+            <span class="title">Users</span>
+        </div>
+        <div id="videoinfo">
+            <span class="title">Video Info</span>
+        </div>
+    </div>
+    </div>
+
+  </div>
+</body>
+</html>
